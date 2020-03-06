@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CSS Diff Examples</title>
+    <link rel="stylesheet" href="./pure.css"/>
+    <link rel="stylesheet" href="./feature.css"/>
+    <script src="../dist/findOverrides.min.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" class="ux-btn">Click Me (default)</button>
+    <button type="button" class="ux-btn ux-btn--icon">Click Me (with icon)</button>
+    <button type="button" class="ux-btn addl-class">Click Me (addl-class)</button>
+    <button type="button" class="ux-btn anchor-class">Click Me (anchor-class)</button>
+    <button type="button" class="ux-btn anchor-class">Click Me (anchor-class)</button>
+    <script type="module">
+      import { pure } from './pure.js';
+
+      const overrides = window.findOverrides(pure);
+      console.log(overrides);
+    </script>
+  </body>
+</html>

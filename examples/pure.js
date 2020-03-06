@@ -1,0 +1,26 @@
+export const pure = `:root {
+  --ux-blue--400: #1976d2;
+  --ux-white--100: #ffffff;
+  --ux-black--100: #111111;
+}
+
+:root {
+  --button-backgroundColor: var(--ux-blue--400);
+  --button-foregroundColor: var(--ux-white--100);
+  --button-borderColor: var(--ux-blue--400);
+}
+
+.ux-btn {
+  all: unset;
+  font: inherit;
+  padding: .5rem 1rem;
+
+  background-color: var(--button-backgroundColor);
+  color: var(--button-foregroundColor);
+  border: 1px solid var(--button-borderColor);
+}
+
+.ux-btn--icon {
+  padding-right: 2rem;
+  background-color: blue;
+}`
