@@ -39,29 +39,29 @@ export default function suite () {
     expect(result).to.be.empty;
   });
 
-  it('should return find overrides', async () => {
+  it('should return found overrides', async () => {
     const result = await global.page.evaluate((name, styles) => window[name](styles), DEFAULT_FN_NAME, pure);
+
+    const paddingKeys = [
+      'padding-top',
+      'padding-bottom',
+      'padding-left',
+      'padding-right'
+    ];
 
     expect(result.length).to.equal(3);
 
     expect(result[0].element).to.exist;
     expect(result[0].declarations.length).to.equal(2);
-    expect(result[0].declarations[0].properties).to.include('background-color');
-    expect(result[0].declarations[1].properties).to.include('width');
-    expect(result[0].declarations[1].properties).to.include('text-align');
+    expect(result[0].declarations[0].properties).to.have.keys(['background-color']);
+    expect(result[0].declarations[1].properties).to.have.keys(['width', 'text-align']);
 
     expect(result[1].element).to.exist;
     expect(result[1].declarations.length).to.equal(1);
-    expect(result[1].declarations[0].properties).to.include('padding-top');
-    expect(result[1].declarations[0].properties).to.include('padding-bottom');
-    expect(result[1].declarations[0].properties).to.include('padding-left');
-    expect(result[1].declarations[0].properties).to.include('padding-right');
+    expect(result[1].declarations[0].properties).to.have.keys(paddingKeys);
 
     expect(result[2].element).to.exist;
     expect(result[2].declarations.length).to.equal(1);
-    expect(result[2].declarations[0].properties).to.include('padding-top');
-    expect(result[2].declarations[0].properties).to.include('padding-bottom');
-    expect(result[2].declarations[0].properties).to.include('padding-left');
-    expect(result[2].declarations[0].properties).to.include('padding-right');
+    expect(result[2].declarations[0].properties).to.have.keys(paddingKeys);
   });
 }
