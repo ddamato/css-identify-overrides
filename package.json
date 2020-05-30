@@ -2,7 +2,7 @@
   "name": "css-identify-overrides",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/findOverrides.min.js",
   "scripts": {
     "build:examples": "node -r esm ./bin/cssExporter.js",
     "build": "rollup -c && npm run build:examples",
