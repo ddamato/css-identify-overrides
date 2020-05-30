@@ -2,6 +2,9 @@
 
 The main export of this package is expected to run in the browser. It takes a single argument; a string of CSS declarations that are expected to be styling the elements on the page. The return value will be a collection of reported elements which have styles that override the given styles.
 
+## Examples 
+Check out the console at the following link: https://ddamato.github.io/css-identify-overrides/examples
+
 ## How it works
 1. Create a disabled stylesheet from the provided styles.
 1. Collect all the page stylesheets.
