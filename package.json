@@ -6,7 +6,7 @@
   "scripts": {
     "build:examples": "node -r esm ./bin/cssExporter.js",
     "build": "rollup -c && npm run build:examples",
-    "test": "mocha -r esm ./test/index.js"
+    "test": "rollup -c && mocha -r esm ./test/index.js"
   },
   "author": "Donnie D'Amato",
   "license": "ISC",

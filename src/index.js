@@ -10,7 +10,9 @@ export default function findOverrides(pureCss) {
   customRules = customRules.filter(({cssText}) => !pureText.includes(cssText));
 
   const pureSelectors = pureRules.map(({ selectorText }) => selectorText);
-  const elements = [...document.querySelectorAll(pureSelectors.join())];
+  const elements = pureSelectors.length
+    ? [...document.querySelectorAll(pureSelectors.join())]
+    : [];
 
   style.remove();
 
